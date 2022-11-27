@@ -35,12 +35,12 @@ from rasterio.features import shapes as rioshapes
 import fiona
 from fiona.crs import from_epsg
 
-import laspy
+#import laspy
 
-try:
-    from pycrown import _crown_dalponte_cython
-except ImportError:
-    print("WARNING: Cython module not compiled. 'crown_dalponte_cython' not available")
+#try:
+#    from pycrown import _crown_dalponte_cython
+#except ImportError:
+#    print("WARNING: Cython module not compiled. 'crown_dalponte_cython' not available")
 from pycrown import _crown_dalponte_numba
 from pycrown import _crown_dalponteCIRC_numba
 
