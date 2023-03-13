@@ -21,9 +21,6 @@ import scipy.ndimage as ndimage
 import scipy.ndimage.filters as filters
 from scipy.spatial.distance import cdist
 
-
-from skimage.morphology import watershed
-
 #watershed was moved from skimage.morphology to skimage.segmentation in version 0.17.
 try:
     from skimage.morphology import watershed
