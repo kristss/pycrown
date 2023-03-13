@@ -21,7 +21,22 @@ import scipy.ndimage as ndimage
 import scipy.ndimage.filters as filters
 from scipy.spatial.distance import cdist
 
+
 from skimage.morphology import watershed
+
+#watershed was moved from skimage.morphology to skimage.segmentation in version 0.17.
+try:
+    from skimage.morphology import watershed
+except:
+    print('watershed not sound in skimage.morphology not found, try alternative location')
+try:
+    from skimage.segmentation import watershed
+except:
+    None
+from skimage.filters import threshold_otsu
+# from skimage.feature import peak_local_max
+
+
 from skimage.filters import threshold_otsu
 # from skimage.feature import peak_local_max
 
