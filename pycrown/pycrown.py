@@ -766,8 +766,7 @@ class PyCrown:
                     self.trees.tt_corrected.iloc[tidx] = 2
 
                 # Set new tree top height
-                self.trees.top_cor.iloc[tidx] = \
-                    Point(*self._to_lonlat(cor_col, cor_row, self.resolution))
+                self.trees.top_cor.iloc[tidx] = Point(*self._to_lonlat(cor_col, cor_row, self.resolution))
 
             else:
                 self.trees.tt_corrected.iloc[tidx] = 0
@@ -880,8 +879,7 @@ class PyCrown:
                     points = points[points.return_num == 1]  # first returns
             hull = points.unary_union.convex_hull
             polys.append(hull)
-            lidar_tree_mask[bool_indices] = \
-                lidar_in_crowns[bool_indices].within(hull)
+            lidar_tree_mask[bool_indices] = lidar_in_crowns[bool_indices].within(hull)
         self.trees.crown_poly_smooth = polys
 
         if store_las:
